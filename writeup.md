@@ -72,6 +72,7 @@ To monitor the training progress, ran `tensorboard --logdir="training/reference"
 Tensorboard is used to monitor and analyze the training pocess. From tensorboard we got important based on training and evaluation.
 
 1) Loss charts
+
 From the Loss charts we can see that the loss is changing during the training process for both training dataset and evaluation dataset. As the iteration steps of training is increaing we can see that both training loss and evaluation loss keep descreasing. But evaluation loss is higher than trainig loss.
 
 ![loss charts](./images/loss.png)
@@ -84,11 +85,14 @@ Precision is the  metrics of model evaluation from the charts we can see that th
 
 3) Recall charts
 
-Recall rate is the another metrics of model evaluation .
+Recall rate is the another metrics of model evaluation.
+
 ![recall charts](./images/recall.png)
 
 4) Learning Rate
+
 Visualizing the loss and the metrics will help identify any problems with the training process and allow for the engineer to stop, fix and restart the training.
+
 ![Learning Rate](./images/learning_rate.png)
 
 
@@ -133,11 +137,11 @@ Using the `Explore augmentations.ipynb`notebook, we can visualize the image augm
 
 ![augmentation visualization 8](./images/8.png)
 
-Below image summarizes the configuration changes mentioned above.
+Below images summarizes the configuration changes mentioned above.
 
-After changing the pipeline_new.config file ran the training and evaluation process.
+After changing the pipeline_new.config file ran the training and evaluation process again.
 
-Usin tensorboard, we can see the loss charts. 
+Used tensorboard, to see the improved charts. 
 
 ![loss chart](./images/loss2.png)
 
