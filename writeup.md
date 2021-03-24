@@ -3,8 +3,8 @@
 
 In this project  first, we performed an extensive data analysis including the computation of label distributions, displayed some sample images, and checked for object occlusions.
 To deploy our model to get predictions on images sent to the API we used the TensorFlow Object Detection API.
-We monitored the training with TensorBoard and decide when to end it. To improve our model's performance finally, we experimented it with different hyperparameters to improve our model's performance.We are also provided with code to create a short video of their model predictions.
-Project files were given in  Github repository where starter code is given.
+I monitored the training with TensorBoard and decide when to end it. To improve my model's performance finally, I experimented it with different hyperparameters to improve my model's performance. I also provided with code to create a short video of the model predictions.
+Project files were given in  Github repository where starter code is also given.
 
 ## Docker Setup
 For local setup I have used the provided Dockerfile and requirements in the build directory of the starter code. Built the image created a container. After creating container installed gsutil and added to my path to use it later befor downloading dataset as to do auth login.
@@ -50,7 +50,7 @@ Dataset spliting ratio depends on the two things.One is the total number of samp
 By running this following script  `python create_splits.py --data_dir /home/workspace/data/`
 
 train, test and val directory will be created and all files will be moved to train, test and val directory from processed directory.
-We used for this project  pipeline.config, it is the config for a SSD Resnet 50 640x640 model.
+We used pipeline.config for this project , it is the config for a SSD Resnet 50 640x640 model.
 Created a directory named training and kept the pretained model in  `training/pretrained-models/`.
 
 To change the location of the training and validation files, as well as the location of the label_map file, pretrained weights we edited the config files.We also adjusted the batch size which is 8.
@@ -60,7 +60,8 @@ To create  `pipeline_new.config` ran the following script
 `python edit_config.py --train_dir /home/workspace/data/train/ --eval_dir /home/workspace/data/val/ --batch_size 8 --checkpoint ./training/pretrained-models/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8/checkpoint/ckpt-0 --label_map label_map.pbtxt`
 
 Created another directory under training named reference where kept the pipeline_new.config 
-With the reference configuration , we trained and evaluated the model. Below are the steps to follow:
+
+With the reference configuration, we trained and evaluated the model below are the steps to follow:
 
 To train the model ran the following script given below.
 `python experiments/model_main_tf2.py --model_dir=training/reference/ --pipeline_config_path=training/reference/pipeline_new.config`
@@ -97,7 +98,7 @@ Visualizing the loss and the metrics will help identify any problems with the tr
 
 
 ## Creating an animation
-Exported the trained model first by modifying the arguments of the given function in project instructions to adjust it to our models.
+Exported the trained model first by modifying the arguments of the given function in project instructions to adjust it in my models.
 `python exporter_main_v2.py --input_type image_tensor --pipeline_config_path training/experiment0/pipeline.config --trained_checkpoint_dir training/experiment0 --output_directory training/experiment0/exported_model/`
 
 Finally,  created a video of our model's inferences for any tf record file. For that ran the following command but modifed it according to my model path befroe running.
@@ -110,7 +111,7 @@ Data augmentation is a way to increase the variability in the training dataset w
 
 Augmentation Method
 
-An appropriate data augmentation can dramatically improve model accuracy. Reference configuration performs random horizontal flip and typical random crop. Here I decided to try and use below mentioned data augmentions options in `pipeline_new(augmented).config` to improve model performance pipeline_new_config.
+An appropriate data augmentation can dramatically improve model accuracy. Reference configuration performs random horizontal flip and typical random crop. Here I decided to try and use below mentioned data augmentions options in `pipeline_new(augmented).config` to improve model performance .
 
 random_rgb_to_gray = It randomly convert entire image to grey scale
 
