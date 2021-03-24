@@ -74,7 +74,7 @@ Tensorboard is used to monitor and analyze the training pocess. From tensorboard
 1) Loss charts
 From the Loss charts we can see that the loss is changing during the training process for both training dataset and evaluation dataset. As the iteration steps of training is increaing we can see that both training loss and evaluation loss keep descreasing. But evaluation loss is higher than trainig loss.
 
-![loss charts](./images/loss.jpg)
+![loss charts](./images/loss.png)
 
 
 2) Precision charts
