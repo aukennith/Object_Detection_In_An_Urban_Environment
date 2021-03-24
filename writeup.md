@@ -80,16 +80,16 @@ From the Loss charts we can see that the loss is changing during the training pr
 2) Precision charts
 
 Precision is the  metrics of model evaluation from the charts we can see that the precision change on evalation dataset. 
-![precision charts](./images/precision.jpg)
+![precision charts](./images/precission.png)
 
 3) Recall charts
 
 Recall rate is the another metrics of model evaluation .
-![recall charts](./images/recall.jpg)
+![recall charts](./images/recall.png)
 
 4) Learning Rate
 Visualizing the loss and the metrics will help identify any problems with the training process and allow for the engineer to stop, fix and restart the training.
-![Learning Rate](./images/learning_rate.jpg)
+![Learning Rate](./images/learning_rate.png)
 
 
 ## Creating an animation
@@ -119,19 +119,19 @@ Using the `Explore augmentations.ipynb`notebook, we can visualize the image augm
 
 ![augmentation visualization 1](./images/1.png)
 
-![augmentation visualization 1](./images/2.png)
+![augmentation visualization 2](./images/2.png)
 
-![augmentation visualization 1](./images/3.png)
+![augmentation visualization 3](./images/3.png)
 
-![augmentation visualization 2](./images/4.png)
+![augmentation visualization 4](./images/4.png)
 
-![augmentation visualization 3](./images/5.png)
+![augmentation visualization 5](./images/5.png)
 
-![augmentation visualization 1](./images/6.png)
+![augmentation visualization 6](./images/6.png)
 
-![augmentation visualization 1](./images/7.png)
+![augmentation visualization 7](./images/7.png)
 
-![augmentation visualization 1](./images/8.png)
+![augmentation visualization 8](./images/8.png)
 
 Below image summarizes the configuration changes mentioned above.
 
@@ -139,15 +139,15 @@ After changing the pipeline_new.config file ran the training and evaluation proc
 
 Usin tensorboard, we can see the loss charts. 
 
-![loss chart](./images/loss2.jpg)
+![loss chart](./images/loss2.png)
 
 Precision  charts
-![Precision  chart](./images/precision2.jpg)
+![Precision  chart](./images/precission2.png)
 
 Recall charts
 
-![Recall chart](./images/recall2.jpg)
+![Recall chart](./images/recall2.png)
 
 Learning Rate
 
-![Learning Rate](./images/learning_rate2.jpg)
+![Learning Rate](./images/learning_rate2.png)
