@@ -14,8 +14,8 @@ For local setup I have used the provided Dockerfile and requirements in the buil
 For this project, we used data from the Waymo Open dataset. Downloaded the files directly from the website as tar files or from the Google Cloud Bucket as individual tf records. 
 To download dataset files in download_process.py  file we wrote code in  create_tf_example function. This function takes the components of a Waymo Tf record and save them in the Tf Object Detection api format.
 Then ran the script at using
-python download_process.py --data_dir /home/workspace/data/ --temp_dir /home/backups/
-Now, all downloaded files are stored in /home/workspace/data/processed directory.
+`python download_process.py --data_dir /home/workspace/data/ --temp_dir /home/backups/`
+Now, all downloaded files are stored in `/home/workspace/data/processed` directory.
 After downloading and processing the data we explored the data.
 
 ## Dataset Analysis
@@ -47,15 +47,15 @@ Because the validation set is heavily used in model creation, it is important to
 * Split ratios.   
 Dataset spliting ratio depends on the two things.One is the total number of samples and another is the actual model of itraining. Insufficent training data may cause overfitig as well as insufficent eval/test data  may not be able to get an accurate estimate of the model's accuracy due to lack of test samples. For that striking a right balance with respect to  ratio split is so important. The ratios used in splitting dataset is mainly based on past experience. I adopted a commonly occurring ratio in machine learning community, the ratio we used for train/val/test is 0.8, 0.1, 0.1. 
 
-By running this following script  python create_splits.py --data_dir /home/workspace/data/
+By running this following script  `python create_splits.py --data_dir /home/workspace/data/`
 
 train, test and val directory will be created and all files will be moved to train, test and val directory from processed directory.
 We used for this project  pipeline.config, it is the config for a SSD Resnet 50 640x640 model.
-Created a directory named training and kept the pretained model in  training/pretrained-models/.
+Created a directory named training and kept the pretained model in  `training/pretrained-models/`.
 
 To change the location of the training and validation files, as well as the location of the label_map file, pretrained weights we edited the config files.We also adjusted the batch size which is 8.
 
-To create  pipeline_new.config ran the following script 
+To create  `pipeline_new.config` ran the following script 
 
 `python edit_config.py --train_dir /home/workspace/data/train/ --eval_dir /home/workspace/data/val/ --batch_size 8 --checkpoint ./training/pretrained-models/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8/checkpoint/ckpt-0 --label_map label_map.pbtxt`
 
@@ -110,10 +110,12 @@ Data augmentation is a way to increase the variability in the training dataset w
 
 Augmentation Method
 
-An appropriate data augmentation can dramatically improve model accuracy. Reference configuration performs random horizontal flip and typical random crop. Here I decide to try usebelow mentioned data augmentions options to improve model performance.
+An appropriate data augmentation can dramatically improve model accuracy. Reference configuration performs random horizontal flip and typical random crop. Here I decided to try and use below mentioned data augmentions options in `pipeline_new(augmented).config` to improve model performance pipeline_new_config.
 
 random_rgb_to_gray = It randomly convert entire image to grey scale
-random_adjust_brightness =  It randomly changes image brightness by up to max_delta default is 0.2 . 
+
+random_adjust_brightness =  It randomly changes image brightness by up to max_delta default is 0.2 .
+
 random_distort_color = It performs a random color distortion. color_orderings should either be 0 or 1.
 
 (https://github.com/tensorflow/models/blob/master/research/object_detection/protos/preprocessor.proto)
@@ -139,7 +141,7 @@ Using the `Explore augmentations.ipynb`notebook, we can visualize the image augm
 
 Below images summarizes the configuration changes mentioned above.
 
-After changing the pipeline_new.config file ran the training and evaluation process again.
+After changing the pipeline_new.config file we again ran the training and evaluation process.
 
 Used tensorboard, to see the improved charts. 
 
